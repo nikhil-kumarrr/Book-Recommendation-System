@@ -12,21 +12,22 @@ Select a book and instantly get the top similar recommendations with covers and 
 
 ## 🧠 How It Works
 The system uses:
-1️⃣ Dataset
-Book-Crossing Dataset containing:
+### 1️⃣ Dataset
+Book-Crossing Dataset 
+containing:
 - ISBN
 - Book Title
 - Author
 - User Ratings
 - Book Cover URL
 
-## 2️⃣ Data Processing (Notebook)
+### 2️⃣ Data Processing (Notebook)
 - Removing implicit ratings
 - Filtering active users
 - Selecting popular books
 - Creating user-book pivot table
 
-## 3️⃣ ML Model
+### 3️⃣ ML Model
 - User-Item Matrix
 - Similarity Matrix → Cosine Similarity
 - Stored as → similarity_scores.pkl
