@@ -3,30 +3,60 @@ import pickle
 import pandas as pd
 import os
 
+# ----------- PAGE CONFIG -----------
 st.set_page_config(
     page_title="AI Book Recommender",
     layout="wide",
 )
 
-# ----------- LIGHT BLUE THEME -----------
+# ----------- DARK THEME WITH SOFTER SIDEBAR -----------
 st.markdown("""
 <style>
-.stApp {
-    background-color: #EAF4FF;
-    color: #1F2937;
+
+/* MAIN BACKGROUND */
+html, body, .stApp {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
 }
 
-h1, h2, h3 {
-    color: #0F172A;
+/* TOP HEADER */
+header[data-testid="stHeader"] {
+    background-color: #000000 !important;
 }
 
-.card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+/* TOOLBAR */
+div[data-testid="stToolbar"] {
+    background-color: #000000 !important;
 }
+
+/* SIDEBAR (MORE FADED) */
+section[data-testid="stSidebar"] {
+    background-color: #141416 !important;
+    border-right: 1px solid #1C1C1E;
+}
+
+/* TEXT */
+h1, h2, h3, h4, p, span, label {
+    color: #FFFFFF !important;
+}
+
+/* BUTTON */
+.stButton>button {
+    background-color: #111111;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+.stButton>button:hover {
+    background-color: #1f1f1f;
+}
+
+/* SELECTBOX */
+div[data-baseweb="select"] {
+    background-color: #111111 !important;
+    color: white !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -39,7 +69,7 @@ def load_file(file):
     if not os.path.exists(file):
         st.error(f"{file} missing")
         st.stop()
-    return pickle.load(open(file,"rb"))
+    return pickle.load(open(file, "rb"))
 
 popular_df = load_file("popular.pkl")
 pt = load_file("pt.pkl")
@@ -48,7 +78,7 @@ similarity_scores = load_file("similarity_scores.pkl")
 
 # ----------- SIDEBAR -----------
 st.sidebar.title("Navigation")
-menu = st.sidebar.radio("", ["Popular Books","Get Recommendations"])
+menu = st.sidebar.radio("", ["Popular Books", "Get Recommendations"])
 
 # ----------- POPULAR BOOKS -----------
 if menu == "Popular Books":
@@ -73,6 +103,7 @@ if menu == "Get Recommendations":
 
     if st.button("Recommend Books"):
         index = list(pt.index).index(selected_book)
+
         similar_items = sorted(
             list(enumerate(similarity_scores[index])),
             key=lambda x: x[1],
@@ -87,6 +118,12 @@ if menu == "Get Recommendations":
             temp_df = books[books['Book-Title'] == pt.index[item[0]]]
 
             with cols[i]:
-                st.image(temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values[0])
-                st.markdown(f"**{temp_df.drop_duplicates('Book-Title')['Book-Title'].values[0]}**")
-                st.caption(temp_df.drop_duplicates('Book-Title')['Book-Author'].values[0])
+                st.image(
+                    temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values[0]
+                )
+                st.markdown(
+                    f"**{temp_df.drop_duplicates('Book-Title')['Book-Title'].values[0]}**"
+                )
+                st.caption(
+                    temp_df.drop_duplicates('Book-Title')['Book-Author'].values[0]
+                )
