@@ -83,6 +83,6 @@ streamlit run app.py
 └── README.md
 ```
 
-## 📊 Dataset
+##  Dataset
 Dataset used: Book-Crossing Dataset
 Available on Kaggle : https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
