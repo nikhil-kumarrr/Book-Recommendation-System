@@ -8,7 +8,7 @@ Select a book and instantly get the top similar recommendations with covers and 
 -  Instant top-5 recommendations
 -  Clean interactive UI
 -  Uses Book-Crossing dataset
-- 🔎 Real-time recommendation engine
+-  Real-time recommendation engine
 
 ## 🧠 How It Works
 The system uses:
