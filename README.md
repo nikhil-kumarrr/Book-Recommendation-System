@@ -6,7 +6,7 @@ Select a book and instantly get the top similar recommendations with covers and 
 -  ML-based similarity recommendations
 -  Popular books dashboard
 -  Instant top-5 recommendations
-- 🎨 Clean interactive UI
+-  Clean interactive UI
 -  Uses Book-Crossing dataset
 - 🔎 Real-time recommendation engine
 
