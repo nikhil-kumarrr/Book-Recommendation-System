@@ -10,7 +10,7 @@ Select a book and instantly get the top similar recommendations with covers and 
 -  Uses Book-Crossing dataset
 -  Real-time recommendation engine
 
-## 🧠 How It Works
+##  How It Works
 The system uses:
 ### 1️⃣ Dataset
 Book-Crossing Dataset 
