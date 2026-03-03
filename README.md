@@ -39,7 +39,7 @@ containing:
 - Streamlit
 - Pickle
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 ### 1️⃣ Clone the repo
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
