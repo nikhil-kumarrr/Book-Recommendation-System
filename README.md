@@ -2,7 +2,7 @@
 An ML-powered book recommender app built using collaborative filtering and cosine similarity with an interactive Streamlit dashboard.
 Select a book and instantly get the top similar recommendations with covers and author details.
 
-## 🚀 Features
+##  Features
 - 🎯 ML-based similarity recommendations
 - 📚 Popular books dashboard
 - ⚡ Instant top-5 recommendations
